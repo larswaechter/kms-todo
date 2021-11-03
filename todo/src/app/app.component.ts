@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {LoginComponent} from './login/login.component';
+import {AngularFireAuth} from '@angular/fire/auth';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo';
+  title = 'ToDo-Liste';
+
+  constructor(private modalService: NgbModal, public auth: AngularFireAuth) {
+  }
+
+  openLogin(): void {
+    this.modalService.open(LoginComponent);
+  }
+
+  logout(): void {
+    this.auth.signOut();
+  }
 }
