@@ -1,0 +1,18 @@
+<div class="container">
+  <h4>ToDo</h4>
+
+  <button class="btn btn-secondary" (click)="dataService.add()">New</button>
+
+  <div *ngFor="let todo of dataService.todos | async; let i = index" class="m-2">
+    <app-todo-item *ngIf="!todo.done" [todo]="todo" (done)="dataService.markDone(todo.id)"></app-todo-item>
+  </div>
+
+  <h4>Done</h4>
+
+  <div *ngFor="let todo of dataService.todos | async; let i = index" class="m-2">
+    <app-todo-item *ngIf="todo.done" [todo]="todo"
+                   (done)="dataService.markUndone(todo.id)"
+                   (delete)="dataService.delete(todo.id)"></app-todo-item>
+  </div>
+
+</div>
