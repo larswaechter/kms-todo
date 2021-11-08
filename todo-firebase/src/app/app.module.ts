@@ -13,6 +13,7 @@ import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { LoginComponent } from './login/login.component';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { EditTodoComponent } from './edit-todo/edit-todo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     ListComponent,
     AddTodoComponent,
     TodoItemComponent,
-    LoginComponent
+    LoginComponent,
+    EditTodoComponent
   ],
   imports: [
     BrowserModule,

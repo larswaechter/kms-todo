@@ -8,6 +8,8 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {Observable} from 'rxjs';
 import firebase from 'firebase';
 import User = firebase.User;
+import {EditTodoComponent} from "./edit-todo/edit-todo.component";
+import {catchError} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +25,9 @@ export class DataService {
     this.auth.user.subscribe(user => {
       if (user) {
         this.user = user;
-        this.todoCollection = afs.collection<ToDoEntry>(`users/${user.uid}/todos`);
+        this.todoCollection = afs.collection<ToDoEntry>(`users/${user.uid}/todos`, ref =>
+          ref.orderBy('rating', 'desc')
+        );
         this.todos = this.todoCollection.valueChanges({idField: 'id'});
       }
     });
@@ -34,11 +38,30 @@ export class DataService {
       const modal = this.modalService.open(AddTodoComponent);
       try {
         const title = await modal.result;
-        const res = await this.todoCollection.add({title, done: false, date: new Date().toISOString()});
+        const res = await this.todoCollection.add({title, done: false, date: new Date().toISOString(), rating: 1});
         console.log(res);
       } catch (e) {
         console.log('Window closed', e);
       }
+    }
+  }
+
+  async edit(todo: ToDoEntry): Promise<void> {
+    if (this.user) {
+      const modal = this.modalService.open(EditTodoComponent);
+      try {
+        const title = await modal.result;
+        //Datum wird ebenfalls erneuert
+        this.todoCollection.doc(todo.id).update({title: title, date: new Date().toISOString()})
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
+
+  async editRating(todo: ToDoEntry) {
+    if (this.user) {
+      this.todoCollection.doc(todo.id).update({rating: todo.rating})
     }
   }
 

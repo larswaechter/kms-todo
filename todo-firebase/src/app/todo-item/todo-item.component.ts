@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ToDoEntry} from '../ToDoEntry';
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-todo-item',
@@ -12,7 +13,7 @@ export class TodoItemComponent implements OnInit {
   @Output() done: EventEmitter<void> = new EventEmitter<void>();
   @Output() delete: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
   }
