@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="modal-title">Login</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label for="mail">Email</label>
+      <input #mail type="email" class="form-control" id="mail" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input #password type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary mr-2 mb-2" (click)="loginWithPassword(mail.value, password.value)">Login</button>
+    <button type="submit" class="btn btn-secondary mb-2" (click)="register(mail.value, password.value)">Register</button>
+  </form>
+
+
+  <button class="btn btn-primary" (click)="loginWithGoogle()">Log In With Google</button>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

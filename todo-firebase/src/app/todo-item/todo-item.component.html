@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{todo.title}}</h5>
+    <p class="card-text">{{todo.date | date}}</p>
+    <a href="#" class="btn btn-primary" (click)="done.emit()">{{todo.done ? 'Undone' : 'Done'}}</a>
+    <a href="#" *ngIf="todo.done" class="btn btn-danger ml-2" (click)="delete.emit()">Delete</a>
+  </div>
+</div>

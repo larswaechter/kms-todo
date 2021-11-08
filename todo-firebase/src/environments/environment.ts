@@ -1,9 +1,18 @@
 // This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCSoBOK8XZFjMpKgWIomSdEbdrtklNqfc4',
+    authDomain: 'todo-wbs2.firebaseapp.com',
+    projectId: 'todo-wbs2',
+    storageBucket: 'todo-wbs2.appspot.com',
+    messagingSenderId: '606503185313',
+    appId: '1:606503185313:web:64ec25692e4474c0f1f9e0',
+    measurementId: 'G-V05EK5PW3R'
+  }
 };
 
 /*
@@ -13,4 +22,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
