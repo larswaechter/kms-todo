@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">{{title}}</a>
   <div class="mr-auto"></div>
-  <button class="btn btn-outline-success" (click)="openLogin()" *ngIf="(auth.user | async) === (false) ">Log In</button>
+  <button class="btn btn-outline-success" (click)="openLogin()" *ngIf="!(auth.user | async) ">Log In</button>
   <button class="btn btn-outline-success" (click)="logout()" *ngIf="auth.user | async">Log Out</button>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
