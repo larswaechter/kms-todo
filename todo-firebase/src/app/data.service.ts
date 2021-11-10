@@ -8,8 +8,8 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {Observable} from 'rxjs';
 import firebase from 'firebase';
 import User = firebase.User;
-import {EditTodoComponent} from "./edit-todo/edit-todo.component";
-import {catchError} from "rxjs/operators";
+import {EditTodoComponent} from './edit-todo/edit-todo.component';
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -51,8 +51,8 @@ export class DataService {
       const modal = this.modalService.open(EditTodoComponent);
       try {
         const title = await modal.result;
-        //Datum wird ebenfalls erneuert
-        this.todoCollection.doc(todo.id).update({title: title, date: new Date().toISOString()})
+        // Datum wird ebenfalls erneuert
+        this.todoCollection.doc(todo.id).update({title, date: new Date().toISOString()});
       } catch (e) {
         console.log(e);
       }
@@ -61,7 +61,7 @@ export class DataService {
 
   async editRating(todo: ToDoEntry) {
     if (this.user) {
-      this.todoCollection.doc(todo.id).update({rating: todo.rating})
+      this.todoCollection.doc(todo.id).update({rating: todo.rating});
     }
   }
 
