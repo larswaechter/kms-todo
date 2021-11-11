@@ -19,4 +19,8 @@ describe('ToDoEntry', () => {
   it('done should be false', () => {
     expect(todoTest.done).toBe(false);
   });
+
+  it('rating should be 1', () => {
+    expect(todoTest.rating).toBe(1);
+  });
 });
