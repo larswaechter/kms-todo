@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
 
 import { EditTodoComponent } from './edit-todo.component';
+import {AddTodoComponent} from '../add-todo/add-todo.component';
+import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 describe('EditTodoComponent', () => {
   let component: EditTodoComponent;
@@ -11,8 +11,8 @@ describe('EditTodoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [NgbModal, NgbActiveModal],
-      declarations: [ EditTodoComponent ]
+      declarations: [ EditTodoComponent ],
+      providers: [NgbModal, NgbActiveModal]
     })
     .compileComponents();
     service = TestBed.inject(NgbModal);
@@ -28,7 +28,18 @@ describe('EditTodoComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should be empty', () => {
+  it('', () => {
     expect(component.title).toBe('');
+  });
+
+  it('should edit a todo', () => {
+    const ref = service.open(EditTodoComponent);
+
+    ref.result.then((res) => {
+      expect(res).toBe('Mein updated Todo');
+    });
+
+    ref.componentInstance.title = 'Mein updated Todo';
+    ref.componentInstance.edit();
   });
 });
