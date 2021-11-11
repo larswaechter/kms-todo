@@ -41,18 +41,4 @@ describe('AddTodoComponent', () => {
     expect(component.title).toBe('');
   });
 
-
-  /*
-    it('should not add empty todo', () => {
-      const ref = service.open(AddTodoComponent);
-
-      const cb = () => {};
-      ref.result.then(cb);
-
-      expect(cb).toHaveBeenCalledTimes(0);
-
-      ref.componentInstance.title = ' ';
-      ref.componentInstance.save();
-    });
-   */
 });

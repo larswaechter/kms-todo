@@ -21,6 +21,7 @@ export class DataService {
   doneTodos: Observable<ToDoEntry[]>;
   user: User | null = null;
 
+
   constructor(private modalService: NgbModal, private http: HttpClient, private afs: AngularFirestore, private auth: AngularFireAuth) {
     this.auth.user.subscribe(user => {
       if (user) {
@@ -59,7 +60,7 @@ export class DataService {
     }
   }
 
-  async editRating(todo: ToDoEntry) {
+  async editRating(todo: ToDoEntry): Promise<void> {
     if (this.user) {
       this.todoCollection.doc(todo.id).update({rating: todo.rating});
     }
