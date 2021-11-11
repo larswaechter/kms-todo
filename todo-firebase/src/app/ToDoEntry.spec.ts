@@ -15,4 +15,8 @@ describe('ToDoEntry', () => {
   it('should show date', () => {
     expect(todoTest.date).toBeTruthy('');
   });
+
+  it('done should be false', () => {
+    expect(todoTest.done).toBe(false);
+  });
 });
