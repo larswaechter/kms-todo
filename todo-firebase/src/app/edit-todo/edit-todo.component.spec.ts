@@ -22,4 +22,8 @@ describe('EditTodoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('', () => {
+    expect(component.title).toBe('');
+  });
 });
