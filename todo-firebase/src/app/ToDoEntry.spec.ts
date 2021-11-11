@@ -11,4 +11,8 @@ describe('ToDoEntry', () => {
   it(`title should be "test"`, () => {
    expect(todoTest.title).toBe('test');
   });
+
+  it('should show date', () => {
+    expect(todoTest.date).toBeTruthy('');
+  });
 });
