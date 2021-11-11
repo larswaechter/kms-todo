@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditTodoComponent } from './edit-todo.component';
-import {AddTodoComponent} from '../add-todo/add-todo.component';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 describe('EditTodoComponent', () => {
