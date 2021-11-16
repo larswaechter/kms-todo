@@ -7,6 +7,7 @@ describe('EditTodoComponent', () => {
   let component: EditTodoComponent;
   let fixture: ComponentFixture<EditTodoComponent>;
   let service: NgbModal;
+  let title= 'EditTodoComponet';
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -40,5 +41,9 @@ describe('EditTodoComponent', () => {
 
     ref.componentInstance.title = 'Mein updated Todo';
     ref.componentInstance.edit();
+  });
+
+  it('checks if title is not EditTodoComponent', () => {
+    expect(component.title).not.toBe(title);
   });
 });
