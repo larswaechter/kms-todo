@@ -1,5 +1,7 @@
 # Todo
 
+[![CI](https://github.com/larswaechter/kms-todo/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/larswaechter/kms-todo/actions/workflows/main.yml)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Development server
