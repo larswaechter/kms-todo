@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js 12.8
+      - name: Use Node.js 14
         uses: actions/setup-node@v1
         with:
           node-version: 14
@@ -22,5 +22,6 @@ jobs:
         run: npm run build -- --prod
         working-directory: todo-firebase
       - name: Test
-        run: npm test -- --configuration=ci
+        run: |
+          npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
         working-directory: todo-firebase
