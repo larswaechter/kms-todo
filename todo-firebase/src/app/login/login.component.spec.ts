@@ -19,11 +19,13 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
+  /*
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  /*it ('should login a user' , () => {
+  it ('should login a user' , () => {
     expect(component.loginWithPassword('Laura@test.de', '12345678')).toBeTruthy();
-  });*/
+  });
+  */
 });
