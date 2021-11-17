@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditTodoComponent } from './edit-todo.component';
-import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('EditTodoComponent', () => {
   let component: EditTodoComponent;
   let fixture: ComponentFixture<EditTodoComponent>;
   let service: NgbModal;
-  let title= 'EditTodoComponet';
+  const title = 'EditTodoComponet';
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditTodoComponent ],
-      providers: [NgbModal, NgbActiveModal]
-    })
-    .compileComponents();
+      declarations: [EditTodoComponent],
+      providers: [NgbModal, NgbActiveModal],
+    }).compileComponents();
     service = TestBed.inject(NgbModal);
   });
 
