@@ -14,8 +14,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        run: npm install
+        run: npm ci
         working-directory: todo-firebase
       - name: Build
         run: npm run build -- --prod
