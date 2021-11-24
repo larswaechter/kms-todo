@@ -11,7 +11,9 @@ import {AngularFireAuth} from '@angular/fire/auth';
 export class AppComponent {
   title = 'ToDo-Liste';
 
+
   constructor(private modalService: NgbModal, public auth: AngularFireAuth) {
+    let lintTest = '';
   }
 
   openLogin(): void {
