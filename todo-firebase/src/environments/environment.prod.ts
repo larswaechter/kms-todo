@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'AIzaSyCSoBOK8XZFjMpKgWIomSdEbdrtklNqfc4',
-    authDomain: 'larswaechter.github.io',
-    projectId: 'todo-wbs2',
-    storageBucket: 'todo-wbs2.appspot.com',
-    messagingSenderId: '606503185313',
-    appId: '1:606503185313:web:64ec25692e4474c0f1f9e0',
-    measurementId: 'G-V05EK5PW3R',
+    apiKey: 'AIzaSyDm5UAPzJMR4Njp-JFoAZrDblXJcdcCjg0',
+    authDomain: 'todo-b3b14.firebaseapp.com',
+    projectId: 'todo-b3b14',
+    storageBucket: 'todo-b3b14.appspot.com',
+    messagingSenderId: '368460293199',
+    appId: '1:368460293199:web:88e05074da7585e5f9f63a',
+    measurementId: 'G-M9Y82N4CVN',
   },
 };

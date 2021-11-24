@@ -3,6 +3,8 @@
 [![CI](https://github.com/larswaechter/kms-todo/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/larswaechter/kms-todo/actions/workflows/main.yml)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
+[GitHub Pages Link](https://larswaechter.github.io/kms-todo/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Development server
